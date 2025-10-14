@@ -6,8 +6,7 @@
   "author": "Raniel Sobrinho",
   "license": "MIT",
   "scripts": {
-    "start": "tsc && node dist/main/server.js",
-    "start:test": "node dist/app.js",
+    "start": "node dist/app.js",
     "dev": "tsx watch src/main/server.ts",
     "build": "node esbuild.config.js"
   },
