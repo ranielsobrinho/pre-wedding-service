@@ -25,7 +25,6 @@ COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile --production && yarn cache clean
 
 COPY --from=build /app/dist ./dist
-COPY --from=build /app/.env.production .env
 
 RUN chown -R appuser:appgroup /app
 
