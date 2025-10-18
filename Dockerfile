@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package*.json yarn.lock ./
 
-RUN yarn install --frozen-lockfile --prod && yarn cache clean
+RUN npm i -g yarn && yarn install --frozen-lockfile --prod && yarn cache clean
 
 COPY . .
 
@@ -18,7 +18,7 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
 COPY package.json yarn.lock ./
 
-RUN yarn install --frozen-lockfile --prod && yarn cache clean
+RUN npm i -g yarn && yarn install --frozen-lockfile --prod && yarn cache clean
 
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/.env.production .env
