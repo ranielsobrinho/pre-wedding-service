@@ -43,8 +43,6 @@ Instale pre-wedding-service com npm ou yarn
   cd pre-wedding-service
   npm install
   docker compose up -d (para rodar o Redis, pois o projeto usa Redis e Bull para agendamento de envio das mensagens)
-  npm run build
-  npm start
 ```
 
 ## Stack utilizada
