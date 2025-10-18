@@ -5,3 +5,19 @@ services:
     ports:
       - "6379:6379"
     restart: unless-stopped
+
+  pre-wedding-service:
+    image: pre-wedding-service
+    container_name: pre-wedding-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+    depends_on:
+      - redis
+    environment:
+      REDIS_HOST: redis
+      ZAPSTER_INSTANCE_ID: instance-id
+      ZAPSTER_TOKEN: token_string
+      PORT: 5002
